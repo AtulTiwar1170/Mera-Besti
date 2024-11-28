@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Mera Bestie - Gift Shop</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* Header styles */
+      .header {
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #6b46c1;
+      }
+
+      .search-bar {
+        flex: 1;
+        max-width: 500px;
+        margin: 0 2rem;
+        position: relative;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 0.5rem 2.5rem 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+      }
+
+      .nav-icons {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-icons i {
+        font-size: 1.2rem;
+        color: #4a5568;
+        cursor: pointer;
+      }
+
+      /* Hero section */
+      .hero {
+        margin-top: 70px;
+        background: linear-gradient(135deg, #6b46c1 0%, #9f7aea 100%);
+        color: white;
+        text-align: center;
+        padding: 4rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Categories section */
+      .categories {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .category-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .category-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Products section */
+      .products {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .product-image {
+
+        width: 100%;
+        height: 200px;
+        background: #f7fafc;
+      }
+      .product-image img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .product-info {
+        padding: 1rem;
+      }
+
+      .product-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-price {
+        color: #6b46c1;
+        font-weight: bold;
+      }
+
+      .add-to-cart {
+        width: 100%;
+        padding: 0.75rem;
+        background: #6b46c1;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      .add-to-cart:hover {
+        background: #553c9a;
+      }
+
+      /* Footer */
+      .footer {
+        background: #2d3748;
+        color: white;
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .search-bar {
+          display: none;
+        }
+
+        .nav-icons {
+          gap: 1rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">Mera Bestie</div>
+        <div class="left flex gap-5 px-10 py-5">
+            <a href="#">Shop</a>
+            <a href="#">Notepad</a>
+            <a href="#">Sticky Notes</a>
+            <a href="#">Planners</a>
+            <a href="#">More</a>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search for gifts..." />
+        </div>
+        <div class="nav-icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-user"></i>
+          <a href="./admin.html">Admin.</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Find the Perfect Gift</h1>
+      <p>Discover unique gifts for every occasion</p>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+      <h2>Shop by Category</h2>
+      <div class="category-grid">
+        <div class="category-card">
+          <i class="fas fa-book fa-2x"></i>
+          <h3>Stationery</h3>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-envelope-open-heart fa-2x"></i>
+          <h3>Greeting Cards</h3>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-gift fa-2x"></i>
+          <h3>Couple Gifts</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+      <h2>Featured Products</h2>
+      <div class="product-grid">
+        <!-- Product cards will be dynamically added here -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div>
+          <h3>About Us</h3>
+          <p>Your one-stop shop for unique gifts</p>
+        </div>
+        <div>
+          <h3>Customer Service</h3>
+          <p>Contact Us</p>
+          <p>Shipping Policy</p>
+          <p>Returns & Exchanges</p>
+        </div>
+        <div>
+          <h3>Connect With Us</h3>
+          <p>Facebook</p>
+          <p>Instagram</p>
+          <p>Twitter</p>
+        </div>
+      </div>
+    </footer>
+
+    
+    <!-- Font Awesome for icons -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

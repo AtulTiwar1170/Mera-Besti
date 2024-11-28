@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Mera Bestie - Admin Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .admin-header {
+            background: #2d3748;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-content {
+            display: flex;
+            min-height: calc(100vh - 64px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #4a5568;
+            color: white;
+            padding: 1rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu li {
+            padding: 0.75rem;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-menu li:hover {
+            background: #2d3748;
+        }
+
+        .sidebar-menu li.active {
+            background: #6b46c1;
+        }
+
+        .content-area {
+            flex: 1;
+            padding: 2rem;
+            background: #f7fafc;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number1 {
+            font-size: 2rem;
+            color: #6b46c1;
+            font-weight: bold;
+        }
+        .stat-number2 {
+            font-size: 2rem;
+            color: #6b46c1;
+            font-weight: bold;
+        }
+        .stat-number3 {
+            font-size: 2rem;
+            color: #6b46c1;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f7fafc;
+            font-weight: 600;
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+
+        .edit-btn {
+            background: #6b46c1;
+            color: white;
+        }
+
+        .delete-btn {
+            background: #e53e3e;
+            color: white;
+        }
+
+        .add-product-form {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background: #6b46c1;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="admin-header">
+
+        <h1>Mera Bestie Admin</h1>
+        <div>
+            <span>Welcome, Admin</span>
+            <button onclick="logout()" class="action-btn">Logout</button>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <nav class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="active" onclick="showDashboard()">Dashboard</li>
+                <li onclick="showProducts()">Products</li>
+                <li onclick="showOrders()">Orders</li>
+                <li onclick="showCustomers()">Customers</li>
+            </ul>
+        </nav>
+
+        <main class="content-area">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number1" id="no-of-products"></div>
+                    <div>Total Products</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number2">00</div>
+                    <div>Total Orders</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number3">₹00,000</div>
+                    <div>Revenue</div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Product Management</h2>
+                    <button onclick="toggleAddProductForm()" class="action-btn edit-btn">Add New Product</button>
+                </div>
+
+                <form id="addProductForm" class="add-product-form">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Price (₹)</label>
+                        <input type="number" id="productPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Image URL</label>
+                        <input type="text" id="productImage" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Add Product</button>
+                </form>
+
+                <table id="productsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script>
+
+        function showDashboard() {
+    
+        }
+
+        function showProducts() {
+    
+        }
+
+        function showOrders() {
+    
+        }
+
+        function showCustomers() {
+    
+        }
+        function toggleAddProductForm() {
+            const form = document.getElementById('addProductForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

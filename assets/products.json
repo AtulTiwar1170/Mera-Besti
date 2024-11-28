@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1,
+        "category": "Stationery Items",
+        "name": "Personalized Notebook",
+        "description": "A customizable notebook with unique designs and names.",
+        "price": 19.99,
+        "imageUrl": "https://tse2.mm.bing.net/th?id=OIP.moE0NJASplpCiotspnhGPAHaHa&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 2,
+        "category": "Stationery Items",
+        "name": "Pen Set",
+        "description": "Elegant pen sets with matching ballpoint and fountain pens.",
+        "price": 29.95,
+        "imageUrl": "https://tse4.mm.bing.net/th?id=OIP.G6tp_8siCj0maG-6DL-gsgHaFk&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 3,
+        "category": "Stationery Items",
+        "name": "Sticky Note Pads",
+        "description": "Colorful sticky note pads in various shapes and sizes.",
+        "price": 7.99,
+        "imageUrl": "https://tse4.mm.bing.net/th?id=OIP.VM--DeIqHHUyRODoZEQn5AHaF2&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 4,
+        "category": "Stationery Items",
+        "name": "Desk Organizer",
+        "description": "Functional desk organizers to keep workspaces tidy.",
+        "price": 14.99,
+        "imageUrl": "https://tse2.mm.bing.net/th?id=OIP.aSRZfdj1bfXJZ96ZW8yMOQHaHa&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 5,
+        "category": "Stationery Items",
+        "name": "Calligraphy Pens",
+        "description": "High-quality calligraphy pens for beautiful handwriting.",
+        "price": 12.99,
+        "imageUrl": "https://tse3.mm.bing.net/th?id=OIP.zTSLXXo7DtqrXAjmQ5KU5AAAAA&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 6,
+        "category": "Couple Gifts",
+        "name": "Customized Photo Frame",
+        "description": "Personalized photo frames with couple's pictures.",
+        "price": 24.99,
+        "imageUrl": "https://tse1.mm.bing.net/th?id=OIP.evG1XXKsBm1x-TB7zJ8m1gAAAA&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 7,
+        "category": "Couple Gifts",
+        "name": "Matching Couple T-shirts",
+        "description": "Cute and stylish couple t-shirts with matching designs.",
+        "price": 39.99,
+        "imageUrl": "https://plus.unsplash.com/premium_photo-1698046365953-4114803403a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWF0Y2hpbmclMjBDb3VwbGUlMjBUJTIwc2hpcnRzfGVufDB8fDB8fHww"
+    },
+    {
+        "id": 8,
+        "category": "Couple Gifts",
+        "name": "Romantic Gift Basket",
+        "description": "Gourmet gift baskets filled with chocolates, wine, and other treats.",
+        "price": 59.99,
+        "imageUrl": "https://tse1.mm.bing.net/th?id=OIP.itlsW6ChsejykdtnKYRjpQHaLb&pid=Api&P=0&h=180"
+    },
+    {
+        "id": 9,
+        "category": "Couple Gifts",
+        "name": "Personalized Mugs",
+        "description": "Mugs with couple's names or initials and special messages.",
+        "price": 14.99,
+        "imageUrl": "https://plus.unsplash.com/premium_photo-1719289799297-f5491a1de014?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UGVyc29uYWxpemVkJTIwTXVnc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "id": 10,
+        "category": "Couple Gifts",
+        "name": "Couple Watches",
+        "description": "Stylish and matching watches for couples.",
+        "price": 79.99,
+        "imageUrl": "https://images.unsplash.com/photo-1519211696324-de51ecf0bab5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q291cGxlJTIwV2F0Y2hlc3xlbnwwfHwwfHx8MA%3D%3D"
+    }
+]
+
